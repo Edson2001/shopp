@@ -91,7 +91,7 @@
                                             <span @click="addQtd"> <i class="fa fa-plus"></i></span>
                                         </td>
                                         <td>Kz 100.000</td>
-                                        <td>
+                                        <td v-if="confirm == false">
                                             <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
@@ -124,8 +124,8 @@
                             </tr>
                         </tbody>
                     </table>
-                    <a href="" @click.prevent="changeConfirm" v-if="confirm == false" class="btn btn-danger mt-2">Comprar(1)</a>
-                    <a href="" @click.prevent="changeConfirm" v-if="confirm == true" class="btn btn-danger mt-2">Fzer pedido</a>
+                    <a href="" @click.prevent="changeConfirm(0)" v-if="confirm == false" class="btn btn-danger mt-2">Comprar(1)</a>
+                    <a href="" @click.prevent="changeConfirm(1)" v-if="confirm == true" class="btn btn-danger mt-2">Fzer pedido</a>
                 </div>
                 
 
@@ -142,28 +142,37 @@
 
 import menuSite from "../components/menu.vue"
 import footerSite from "../components/footerSite.vue"
-
+import { useToast } from "vue-toastification";
 import {  ref } from 'vue'
 
 export default {
     components:{footerSite, menuSite},
 
     setup() {
-        
+        const toast = useToast();
         let qtd = ref(1)
         let totalPrice = ref(100000) 
         
         let confirm = ref(false)
        
         
-        function changeConfirm(){
+        function changeConfirm(confirmed){
             
+            if(confirm.value == true && confirmed == 1){
+                toast("Compra feita com sucesso!");
+                confirmed = 0
+                confirm.value = false
+            }
             
            
-            if(confirm.value == false){
+            if(confirmed == 0 && confirm.value == false){
+
                 confirm.value = true
+
             }else{
+
                 confirm.value = false
+                
             }
 
         }

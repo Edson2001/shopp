@@ -2,7 +2,9 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from "./routes/"
 
+import Toast from "vue-toastification";
 
+import "vue-toastification/dist/index.css";
 
 import 'bootstrap/dist/css/bootstrap.css'
 
@@ -13,5 +15,5 @@ import './assets/css/root.css'
 
 createApp(App)
 .use(router)
-
+.use(Toast)
 .mount('#app')

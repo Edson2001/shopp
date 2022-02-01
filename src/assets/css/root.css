@@ -12,7 +12,7 @@ a, a:hover, ul, li{
     width: 100%;
     padding: 10px;
     box-shadow: 0 0px 1px rgb(0 0 0 / 40%);
-    position: fixed;
+    
     z-index: 999999999999;
 }
 .menu  .container{
@@ -42,7 +42,7 @@ a, a:hover, ul, li{
 
 .banner{
     width: 100%;
-    background-image: url(/img/gearbest-black-friday-1-1170x658.b9c99108.jpg);
+    background-image: url(../gearbest.jpg);
     height: 350px;
     background-size: cover;
     background-position: 50%;
