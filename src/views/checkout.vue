@@ -33,11 +33,18 @@
                         <span>Número: 00001111******34</span>
                     </p>
 
+                    <p>Insisra o código</p>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <input type="number" name="" id="" class="form-control">
+                        </div>
+                    </div>
+
                 </div>
 
                 <div v-if="confirm == false" class="card p-3 mb-2">
                     <h3>Métodos de Pagamento</h3>
-                    <img src="../assets/cartoes.jpg" class="card-img-payment" alt="">
+                    <img src="../assets/download.png" class="card-img-payment" alt="">
                     <div class="row">
                         <div class="col-md-4">
                             <label for="">Número do cartão</label>
@@ -124,8 +131,8 @@
                             </tr>
                         </tbody>
                     </table>
-                    <a href="" @click.prevent="changeConfirm(0)" v-if="confirm == false" class="btn btn-danger mt-2">Comprar(1)</a>
-                    <a href="" @click.prevent="changeConfirm(1)" v-if="confirm == true" class="btn btn-danger mt-2">Fzer pedido</a>
+                    <a href="" @click.prevent="changeConfirm(0)" v-if="confirm == false" class="btn btn-danger mt-2">Seguinte</a>
+                    <a href="" @click.prevent="changeConfirm(1)" v-if="confirm == true" class="btn btn-danger mt-2">Pagar</a>
                 </div>
                 
 
