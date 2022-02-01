@@ -2,7 +2,6 @@
 node_modules
 /dist
 
-/src/assets/fontawesome-free-6.0.0-beta3-web
 
 # local env files
 .env.local
